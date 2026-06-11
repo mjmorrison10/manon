@@ -1,67 +1,297 @@
-// Manon - Interactive Scripts
+// ============================================
+// MANON — L'Art de Vivre
+// Interactive Scripts
+// ============================================
 
-const mobileToggle = document.getElementById('mobileToggle');
-const navLinks = document.getElementById('navLinks');
-mobileToggle.addEventListener('click', () => { navLinks.classList.toggle('active'); mobileToggle.classList.toggle('active'); });
-navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); mobileToggle.classList.remove('active'); }); });
+(function() {
+    'use strict';
 
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
+    // ---- DOM Elements ----
+    const header = document.getElementById('siteHeader');
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const scrollProgress = document.getElementById('scrollProgress');
+    const backToTop = document.getElementById('backToTop');
+    const contactForm = document.getElementById('contactForm');
+    const formSuccess = document.getElementById('formSuccess');
+    const openDot = document.getElementById('openDot');
+    const openText = document.getElementById('openText');
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
+    // ---- Mobile Menu ----
+    function toggleMobileMenu() {
+        const isActive = hamburger.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        hamburger.setAttribute('aria-expanded', isActive);
+        mobileMenu.setAttribute('aria-hidden', !isActive);
+        document.body.style.overflow = isActive ? 'hidden' : '';
+    }
 
-const scrollProgress = document.getElementById('scrollProgress');
-function updateScrollProgress() { const s = window.pageYOffset || document.documentElement.scrollTop; scrollProgress.style.width = (s / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 100 + '%'; }
-window.addEventListener('scroll', updateScrollProgress);
+    hamburger.addEventListener('click', toggleMobileMenu);
 
-const backToTop = document.getElementById('backToTop');
-window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); });
-backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            if (hamburger.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+    });
 
-function animateCounter(el, target, dur) { const st = performance.now(); function up(ct) { const p = Math.min((ct - st) / dur, 1); const ep = 1 - Math.pow(1 - p, 3); el.textContent = (target >= 1000 ? Math.floor(ep * target).toLocaleString() : Math.floor(ep * target)) + '+'; if (p < 1) requestAnimationFrame(up); } requestAnimationFrame(up); }
-function fadeInEl(el) { el.style.opacity = '0'; el.style.transform = 'scale(0.5)'; el.style.transition = 'all 0.6s ease'; requestAnimationFrame(() => { el.style.opacity = '1'; el.style.transform = 'scale(1)'; }); }
+    // ---- Navbar Scroll Effect ----
+    let lastScroll = 0;
+    function handleNavbarScroll() {
+        const scrollY = window.pageYOffset;
+        header.classList.toggle('scrolled', scrollY > 50);
+        lastScroll = scrollY;
+    }
 
-const statsObserver = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { const el = entry.target; const c = el.getAttribute('data-count'); if (c !== null) { const t = parseInt(c, 10); if (!isNaN(t) && t > 0) { el.classList.add('counting'); animateCounter(el, t, 2000); } else fadeInEl(el); } statsObserver.unobserve(el); } }); }, { threshold: 0.5 });
-document.querySelectorAll('.stats-number[data-count]').forEach(el => statsObserver.observe(el));
+    // ---- Scroll Progress Bar ----
+    function updateScrollProgress() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+        scrollProgress.style.width = progress + '%';
+    }
 
-const obs = new IntersectionObserver(entries => { entries.forEach(entry => { if (entry.isIntersecting) { const p = entry.target.parentElement; const sibs = Array.from(p.children).filter(c => c.classList.contains('service-card') || c.classList.contains('review-card') || c.classList.contains('why-feature') || c.classList.contains('detail-card')); entry.target.style.animationDelay = (sibs.indexOf(entry.target) * 0.1) + 's'; entry.target.classList.add('animate-in'); obs.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.service-card, .review-card, .why-feature, .detail-card').forEach(el => { el.style.opacity = '0'; obs.observe(el); });
+    // ---- Back to Top ----
+    function handleBackToTop() {
+        backToTop.classList.toggle('visible', window.pageYOffset > 500);
+    }
 
-const heroContent = document.querySelector('.hero-content');
-window.addEventListener('scroll', () => { const s = window.pageYOffset; const h = document.querySelector('.hero').offsetHeight; if (s < h) heroContent.style.transform = `translateY(${s * 0.3}px)`; });
+    backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-(function() { const c = document.getElementById('heroParticles'); if (!c) return; for (let i = 0; i < 20; i++) { const p = document.createElement('div'); p.classList.add('hero-particle'); p.style.left = Math.random() * 100 + '%'; p.style.top = Math.random() * 100 + '%'; p.style.animationDelay = Math.random() * 4 + 's'; p.style.animationDuration = (3 + Math.random() * 3) + 's'; const sz = (4 + Math.random() * 6) + 'px'; p.style.width = sz; p.style.height = sz; c.appendChild(p); } })();
+    // ---- Open/Closed Status ----
+    function updateOpenStatus() {
+        if (!openDot || !openText) return;
+        var now = new Date();
+        var day = now.getDay(); // 0=Sun, 1=Mon, ...
+        var hour = now.getHours();
+        var minute = now.getMinutes();
+        var currentMinutes = hour * 60 + minute;
+        var isOpen = false;
+        var statusLabel = '';
 
-let asi = null;
-function startAS() { const g = document.getElementById('reviewsGrid'); if (!g || window.innerWidth >= 768) return; let d = 1; asi = setInterval(() => { const m = g.scrollWidth - g.clientWidth; if (g.scrollLeft >= m - 2) d = -1; else if (g.scrollLeft <= 2) d = 1; g.scrollLeft += d; }, 30); }
-function stopAS() { if (asi) { clearInterval(asi); asi = null; } }
-const rg = document.getElementById('reviewsGrid');
-if (rg) { rg.addEventListener('touchstart', stopAS); rg.addEventListener('touchend', () => { setTimeout(() => { if (window.innerWidth < 768) startAS(); }, 3000); }); }
-window.addEventListener('resize', () => { if (window.innerWidth < 768) { if (!asi) startAS(); } else stopAS(); }); if (window.innerWidth < 768) startAS();
+        if (day === 0) {
+            // Sunday: 11AM–5PM
+            isOpen = currentMinutes >= 660 && currentMinutes < 1020;
+            statusLabel = isOpen ? 'Open Now' : 'Closed';
+        } else if (day >= 1 && day <= 6) {
+            // Mon–Sat: 10AM–7PM
+            isOpen = currentMinutes >= 600 && currentMinutes < 1140;
+            statusLabel = isOpen ? 'Open Now' : 'Closed';
+        }
 
-const contactForm = document.getElementById('contactForm');
-const formFields = contactForm.querySelectorAll('input, select, textarea');
-formFields.forEach(f => { f.addEventListener('input', function() { this.closest('.form-group').classList.toggle('valid', this.value.trim().length > 0); }); f.addEventListener('blur', function() { if (this.hasAttribute('required') && !this.value.trim()) this.closest('.form-group').classList.remove('valid'); }); });
+        openDot.classList.remove('open', 'closed');
+        openDot.classList.add(isOpen ? 'open' : 'closed');
+        openText.textContent = statusLabel;
+    }
+    updateOpenStatus();
+    setInterval(updateOpenStatus, 60000);
 
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); const d = Object.fromEntries(new FormData(this).entries());
-    const subj = encodeURIComponent('Contact from Manon Website');
-    const body = encodeURIComponent(`Name: ${d.name}\nPhone: ${d.phone || 'N/A'}\nEmail: ${d.email || 'N/A'}\nInterest: ${d.interest || 'N/A'}\nMessage: ${d.message || 'N/A'}\n\nPlease get back to me.`);
-    window.location.href = `mailto:info@manonboutique.com?subject=${subj}&body=${body}`;
-    const btn = this.querySelector('button[type="submit"]'); const ot = btn.innerHTML; btn.innerHTML = '&#10003; Message Sent!'; btn.style.background = '#10b981'; btn.style.borderColor = '#10b981';
-    setTimeout(() => { btn.innerHTML = ot; btn.style.background = ''; btn.style.borderColor = ''; this.reset(); formFields.forEach(f => f.closest('.form-group').classList.remove('valid')); }, 3000);
-});
+    // ---- Smooth Scroll ----
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+            var href = this.getAttribute('href');
+            if (href === '#') return;
+            var target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
 
-setTimeout(() => { document.querySelectorAll('.hero-ctas .btn').forEach(b => b.classList.add('btn-pulse')); }, 3000);
+    // ---- Scroll Animations (Intersection Observer) ----
+    var scrollObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                scrollObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -60px 0px'
+    });
 
-const sections = document.querySelectorAll('section[id]'); const navList = document.querySelectorAll('.nav-links a[data-section]');
-function updateNav() { const sp = window.scrollY + 120; sections.forEach(s => { const t = s.offsetTop; const h = s.offsetHeight; const id = s.id; if (sp >= t && sp < t + h) navList.forEach(l => { l.classList.toggle('active-section', l.getAttribute('data-section') === id); }); }); }
-window.addEventListener('scroll', updateNav); updateNav();
+    document.querySelectorAll('.animate-on-scroll').forEach(function(el) {
+        scrollObserver.observe(el);
+    });
 
-document.querySelectorAll('a[href^="tel:"]').forEach(l => l.addEventListener('click', () => { if (typeof gtag === 'function') gtag('event', 'click_to_call', { business: 'Manon' }); }));
+    // ---- Counter Animation ----
+    function animateCounter(el, target, duration) {
+        var startTime = performance.now();
+        function update(currentTime) {
+            var elapsed = currentTime - startTime;
+            var progress = Math.min(elapsed / duration, 1);
+            // Ease out cubic
+            var eased = 1 - Math.pow(1 - progress, 3);
+            var current = Math.floor(eased * target);
+            el.textContent = current + '+';
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            }
+        }
+        requestAnimationFrame(update);
+    }
 
-window.addEventListener('load', () => {
-    ['.hero-badge', '.hero h1', '.hero-sub', '.hero-ctas', '.hero-trust'].forEach((sel, i) => {
-        const el = document.querySelector(sel); if (el) { el.style.opacity = '0'; el.style.transform = 'translateY(20px)'; setTimeout(() => { el.style.transition = 'all 0.6s ease'; el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }, 200 + i * 200); }
-    }); updateScrollProgress();
-});
+    var counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                var el = entry.target;
+                var target = parseInt(el.getAttribute('data-count'), 10);
+                if (!isNaN(target) && target > 0) {
+                    animateCounter(el, target, 2000);
+                }
+                counterObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-count]').forEach(function(el) {
+        counterObserver.observe(el);
+    });
+
+    // ---- Form Validation & Submission ----
+    var formFields = contactForm.querySelectorAll('input, select, textarea');
+
+    formFields.forEach(function(field) {
+        field.addEventListener('input', function() {
+            if (this.value.trim().length > 0) {
+                this.closest('.form-group').classList.add('valid');
+            } else {
+                this.closest('.form-group').classList.remove('valid');
+            }
+            // Clear error on input
+            var errorEl = this.parentElement.querySelector('.form-error');
+            if (errorEl) errorEl.textContent = '';
+        });
+
+        field.addEventListener('blur', function() {
+            if (this.hasAttribute('required') && !this.value.trim()) {
+                this.closest('.form-group').classList.remove('valid');
+            }
+        });
+    });
+
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Validate
+        var isValid = true;
+        var nameField = document.getElementById('name');
+        var nameError = document.getElementById('nameError');
+
+        if (!nameField.value.trim()) {
+            nameError.textContent = 'Please enter your name';
+            isValid = false;
+        }
+
+        if (!isValid) return;
+
+        // Submit via mailto
+        var formData = new FormData(this);
+        var data = Object.fromEntries(formData.entries());
+        var subject = encodeURIComponent('Contact from Manon Website');
+        var body = encodeURIComponent(
+            'Name: ' + (data.name || 'N/A') + '\n' +
+            'Phone: ' + (data.phone || 'N/A') + '\n' +
+            'Email: ' + (data.email || 'N/A') + '\n' +
+            'Interest: ' + (data.interest || 'N/A') + '\n' +
+            'Message: ' + (data.message || 'N/A') + '\n\n' +
+            'Please get back to me.'
+        );
+        window.location.href = 'mailto:info@manonboutique.com?subject=' + subject + '&body=' + body;
+
+        // Show success
+        formSuccess.classList.add('active');
+
+        // Reset after delay
+        setTimeout(function() {
+            formSuccess.classList.remove('active');
+            contactForm.reset();
+            formFields.forEach(function(f) {
+                f.closest('.form-group').classList.remove('valid');
+            });
+        }, 4000);
+    });
+
+    // ---- Active Nav Section Tracking ----
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.nav-list a');
+
+    function updateActiveNav() {
+        var scrollPos = window.pageYOffset + 120;
+        sections.forEach(function(section) {
+            var top = section.offsetTop;
+            var height = section.offsetHeight;
+            var id = section.getAttribute('id');
+            if (scrollPos >= top && scrollPos < top + height) {
+                navLinks.forEach(function(link) {
+                    var href = link.getAttribute('href');
+                    if (href && href.substring(1) === id) {
+                        link.style.color = 'var(--black)';
+                    } else if (!link.classList.contains('nav-cta')) {
+                        link.style.color = '';
+                    }
+                });
+            }
+        });
+    }
+
+    // ---- Hero Parallax ----
+    var heroContent = document.querySelector('.hero-content');
+    function handleHeroParallax() {
+        var scrollY = window.pageYOffset;
+        var heroHeight = document.querySelector('.hero').offsetHeight;
+        if (scrollY < heroHeight && heroContent) {
+            heroContent.style.transform = 'translateY(' + (scrollY * 0.2) + 'px)';
+            heroContent.style.opacity = 1 - (scrollY / heroHeight) * 0.5;
+        }
+    }
+
+    // ---- Consolidated Scroll Handler ----
+    var ticking = false;
+    function onScroll() {
+        if (!ticking) {
+            requestAnimationFrame(function() {
+                handleNavbarScroll();
+                updateScrollProgress();
+                handleBackToTop();
+                updateActiveNav();
+                handleHeroParallax();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ---- Phone Call Tracking ----
+    document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            if (typeof gtag === 'function') {
+                gtag('event', 'click_to_call', { business: 'Manon' });
+            }
+        });
+    });
+
+    // ---- Initial Calls ----
+    updateScrollProgress();
+    updateActiveNav();
+    handleNavbarScroll();
+
+    // ---- Hero Entrance Animation ----
+    window.addEventListener('load', function() {
+        var heroEls = document.querySelectorAll('.hero .animate-on-scroll');
+        heroEls.forEach(function(el, i) {
+            setTimeout(function() {
+                el.classList.add('is-visible');
+            }, 300 + i * 200);
+        });
+    });
+
+})();

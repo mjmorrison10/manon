@@ -3,484 +3,665 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manon | Chic Fashion & Beauty Boutique in Fullerton, CA</title>
-    <meta name="description" content="Manon in Fullerton, CA. Chic fashion, beauty products, skincare, fragrances, and personal styling. Curated collections, unique finds. 10% OFF your first purchase. Call (714) 441-9196.">
-    <meta name="keywords" content="fashion boutique Fullerton CA, beauty products, skincare, personal styling, Manon Fullerton, chic fashion">
+    <title>Manon | L'Art de Vivre | Fashion & Beauty Boutique in Fullerton, CA</title>
+    <meta name="description" content="Manon — Fullerton's curated fashion and beauty boutique. Women's fashion, premium skincare, signature fragrances, and personal styling. An experience, not just a service. Call (714) 441-9196.">
+    <meta name="keywords" content="fashion boutique Fullerton CA, beauty products, skincare, personal styling, luxury fragrances, Manon Fullerton, chic fashion, women's boutique">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://manonboutique.com">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Manon | L'Art de Vivre — Fashion & Beauty Boutique in Fullerton">
+    <meta property="og:description" content="Curated fashion, premium beauty, and personal styling for the modern woman. An experience, not just a service. Visit us on Yorba Linda Blvd.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://manonboutique.com">
+    <meta property="og:site_name" content="Manon">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Manon | L'Art de Vivre — Fashion & Beauty in Fullerton">
+    <meta name="twitter:description" content="Curated fashion, premium beauty, and personal styling. An experience, not just a service.">
+
+    <!-- SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='0' fill='%230a0a0a'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Georgia, serif' font-weight='400' font-size='36' fill='%23d4a843'%3EM%3C/text%3E%3C/svg%3E">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ClothingStore",
+      "name": "Manon",
+      "description": "Fullerton's curated fashion and beauty boutique. Women's fashion, premium skincare, signature fragrances, and personal styling. An experience, not just a service.",
+      "url": "https://manonboutique.com",
+      "telephone": "+1-714-441-9196",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3250 Yorba Linda Blvd",
+        "addressLocality": "Fullerton",
+        "addressRegion": "CA",
+        "postalCode": "92831",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+          "opens": "10:00",
+          "closes": "19:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "11:00",
+          "closes": "17:00"
+        }
+      ],
+      "priceRange": "$$",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Fashion & Beauty Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Women's Fashion"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Accessories & Handbags"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Beauty Products"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Skincare"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Fragrances"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Gift Sets"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Seasonal Collections"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Personal Styling"}}
+        ]
+      }
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="scroll-progress" id="scrollProgress"></div>
 
-    <div class="top-bar">
-        <div class="container top-bar-inner">
-            <div class="top-bar-left">
-                <span class="top-bar-item">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#" class="logo" aria-label="Manon Home">
+                <span class="logo-letter">M</span>
+                <span class="logo-word">MANON</span>
+            </a>
+
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#manifesto">Our Philosophy</a></li>
+                    <li><a href="#atelier">The Atelier</a></li>
+                    <li><a href="#experience">The Experience</a></li>
+                    <li><a href="#editorial">Voices</a></li>
+                    <li><a href="#maison">La Maison</a></li>
+                    <li><a href="#concierge" class="nav-cta">Book Concierge</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div class="open-indicator" id="openIndicator" aria-live="polite">
+                    <span class="open-dot" id="openDot"></span>
+                    <span class="open-text" id="openText">Checking...</span>
+                </div>
+                <a href="tel:7144419196" class="header-phone" aria-label="Call Manon">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    <a href="tel:7144419196">(714) 441-9196</a>
-                </span>
-                <span class="top-bar-item">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    3250 Yorba Linda Blvd, Fullerton, CA
-                </span>
+                    <span>(714) 441-9196</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="ham-line"></span>
+                    <span class="ham-line"></span>
+                    <span class="ham-line"></span>
+                </button>
             </div>
-            <div class="top-bar-right">
-                <span class="top-bar-item">Mon-Sat: 10AM-7PM | Sun: 11AM-5PM</span>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <div class="mobile-menu-inner">
+            <div class="mobile-menu-letter">M</div>
+            <nav aria-label="Mobile navigation">
+                <ul class="mobile-nav-list">
+                    <li><a href="#manifesto">Our Philosophy</a></li>
+                    <li><a href="#atelier">The Atelier</a></li>
+                    <li><a href="#experience">The Experience</a></li>
+                    <li><a href="#editorial">Voices</a></li>
+                    <li><a href="#maison">La Maison</a></li>
+                </ul>
+            </nav>
+            <a href="tel:7144419196" class="mobile-phone-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                Call (714) 441-9196
+            </a>
+            <div class="mobile-menu-hours">
+                Mon–Sat 10AM–7PM &bull; Sun 11AM–5PM
             </div>
         </div>
     </div>
 
-    <nav class="navbar" id="navbar">
-        <div class="container nav-inner">
-            <a href="#" class="logo">
-                <span class="logo-icon">M</span>
-                <div class="logo-text">
-                    <span class="logo-name">Manon</span>
-                    <span class="logo-tagline">Chic Fashion. Curated Beauty.</span>
-                </div>
-            </a>
-            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#collections" data-section="collections">Our Collections</a></li>
-                <li><a href="#why-us" data-section="why-us">Why Manon</a></li>
-                <li><a href="#reviews" data-section="reviews">Reviews</a></li>
-                <li><a href="#about" data-section="about">About</a></li>
-                <li><a href="#contact" class="nav-cta" data-section="contact">Visit Us</a></li>
-            </ul>
-        </div>
-    </nav>
+    <main>
 
-    <section class="hero" id="hero">
-        <div class="hero-overlay"></div>
-        <div class="container hero-content">
-            <div class="hero-particles" id="heroParticles"></div>
-            <div class="hero-badge">Fullerton's Chic Fashion & Beauty Boutique</div>
-            <h1>Where Style Meets <span class="highlight">Elegance.</span></h1>
-            <p class="hero-sub">Manon is Fullerton's destination for curated fashion, beauty products, and personal styling. Discover collections handpicked for the modern woman who values quality, uniqueness, and effortless sophistication.</p>
-            <div class="hero-ctas">
-                <a href="tel:7144419196" class="btn btn-primary btn-lg btn-pulse">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    Call (714) 441-9196
-                </a>
-                <a href="#contact" class="btn btn-secondary btn-lg btn-pulse">Visit Us Today</a>
-            </div>
-            <div class="hero-trust">
-                <div class="trust-item">
-                    <div class="trust-score">4.5</div>
-                    <div class="trust-label">Yelp Rating<br><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div>
+        <!-- ===== SECTION 1: CINEMATIC EDITORIAL HERO ===== -->
+        <section class="hero" id="hero">
+            <div class="hero-curtain-left"></div>
+            <div class="hero-curtain-right"></div>
+            <div class="hero-content">
+                <div class="hero-eyebrow animate-on-scroll" data-animation="fade-down">
+                    <span class="hero-line"></span>
+                    <span>Fullerton&rsquo;s Curated Fashion &amp; Beauty Maison</span>
+                    <span class="hero-line"></span>
                 </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-score">Curated</div>
-                    <div class="trust-label">Collections<br>Updated Weekly</div>
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-score">Personal</div>
-                    <div class="trust-label">Styling<br>Available</div>
-                </div>
-                <div class="trust-divider"></div>
-                <div class="trust-item">
-                    <div class="trust-score">Unique</div>
-                    <div class="trust-label">Finds You<br>Will Love</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="urgency-banner" id="urgency-banner">
-        <div class="container">
-            <div class="urgency-content">
-                <div class="urgency-text">
-                    <span class="urgency-label">FIRST TIME CUSTOMER SPECIAL</span>
-                    <strong>10% OFF</strong> your first purchase. Mention this website when you visit. Treat yourself today!
-                </div>
-                <a href="tel:7144419196" class="btn btn-white">Claim Your Discount</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="services" id="collections">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Collections</span>
-                <h2>Curated Fashion and Beauty<br>For the Modern Woman</h2>
-                <p>Every piece at Manon is selected with care. From fashion-forward apparel to luxurious skincare, we carry only what we love and what we know you will love too. Come discover your next favorite thing.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.38 3.46L16 2 12 3.46 8 2 3.62 3.46a2 2 0 00-1.34 1.88v14.4a1.27 1.27 0 001.52 1.22L8 20l4 1.46L16 20l4.38 1.46a1.27 1.27 0 001.52-1.22V5.34a2 2 0 00-1.52-1.88z"/></svg>
-                    </div>
-                    <h3>Women's Fashion & Apparel</h3>
-                    <p>Curated clothing that combines timeless elegance with modern trends. Dresses, tops, bottoms, and outerwear selected for quality fabric, flattering fit, and effortless style. Pieces that make you feel confident.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
-                    </div>
-                    <h3>Accessories & Handbags</h3>
-                    <p>The finishing touches that elevate any outfit. Statement jewelry, designer-inspired handbags, scarves, and belts. Each piece chosen to complement our clothing collections beautifully.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                    </div>
-                    <h3>Beauty Products</h3>
-                    <p>Premium beauty products that help you look and feel your best. Makeup, nail care, and beauty tools from brands we trust. Products we use ourselves and recommend with confidence.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18h6M10 22h4M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 01-1 1h-6a1 1 0 01-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/></svg>
-                    </div>
-                    <h3>Skincare Collections</h3>
-                    <p>Luxurious skincare for every skin type and concern. Cleansers, serums, moisturizers, and treatments from premium brands. Healthy, radiant skin starts with the right routine.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                    </div>
-                    <h3>Fragrances</h3>
-                    <p>Signature scents that leave a lasting impression. Perfumes and body fragrances from renowned houses and artisan creators. Find the fragrance that becomes your signature.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12V8H6a2 2 0 01-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 000 4h4v-4h-4z"/></svg>
-                    </div>
-                    <h3>Gift Sets</h3>
-                    <p>Beautifully packaged gift sets for every occasion. Birthdays, anniversaries, or just because. Curated combinations of our best-selling products, wrapped and ready to give.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 010 20"/><path d="M12 2a7 7 0 010 14"/></svg>
-                    </div>
-                    <h3>Seasonal Collections</h3>
-                    <p>Fresh arrivals every season that keep your wardrobe current and your beauty routine on trend. Spring florals, summer glow, fall layers, and winter elegance. Always something new.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-                    </div>
-                    <h3>Personal Styling</h3>
-                    <p>Not sure what works for you? Our personal styling service takes the guesswork out of getting dressed. One-on-one consultations to help you build a wardrobe you love.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="why-us" id="why-us">
-        <div class="container">
-            <div class="why-us-grid">
-                <div class="why-us-content">
-                    <span class="section-tag">Why Manon?</span>
-                    <h2>Not Just a Boutique. A Personal Style Experience.</h2>
-                    <p>Manon is more than a store. It is a style destination where every piece is chosen with intention, every product is tested for quality, and every customer receives personal attention. We believe shopping should feel as good as the pieces you take home.</p>
-                    <div class="why-features">
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#be185d" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            </div>
-                            <div>
-                                <strong>Curated Collections</strong>
-                                <p>We do not carry everything. We carry the right things. Every item in our boutique is hand-selected for quality, style, and value. If it does not meet our standards, it does not make the floor.</p>
-                            </div>
-                        </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#be185d" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            </div>
-                            <div>
-                                <strong>Personal Styling Service</strong>
-                                <p>Our one-on-one styling consultations help you discover what works for your body, lifestyle, and personality. No pushy sales tactics, just genuine expertise and honest advice.</p>
-                            </div>
-                        </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#be185d" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            </div>
-                            <div>
-                                <strong>Unique Finds</strong>
-                                <p>We source from designers and brands you will not find at the mall. Limited quantities mean your style stays uniquely yours. When it is gone, it is gone.</p>
-                            </div>
-                        </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#be185d" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                            </div>
-                            <div>
-                                <strong>Warm, Inviting Atmosphere</strong>
-                                <p>Shopping at Manon feels like visiting a friend who has incredible taste. Browse at your leisure, ask for advice, or just enjoy the beautiful space. You are always welcome here.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="why-us-visual">
-                    <div class="stats-card">
-                        <div class="stats-number" data-count="200">200+</div>
-                        <div class="stats-label">Happy Clients</div>
-                        <div class="stats-divider"></div>
-                        <div class="stats-number" data-count="8">8</div>
-                        <div class="stats-label">Curated Categories</div>
-                        <div class="stats-divider"></div>
-                        <div class="stats-number">Personal</div>
-                        <div class="stats-label">Styling Available</div>
-                        <div class="stats-divider"></div>
-                        <div class="stats-number">Weekly</div>
-                        <div class="stats-label">New Arrivals</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials" id="reviews">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Customer Reviews</span>
-                <h2>Our Clients Love<br>the Manon Experience</h2>
-                <p>Real reviews from women who have discovered their style at Manon. See why our clients keep coming back season after season.</p>
-            </div>
-            <div class="reviews-grid" id="reviewsGrid">
-                <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"Manon is my absolute favorite boutique. The clothing selection is incredible and the quality is outstanding. I always get compliments when I wear something from here. The staff is so helpful and never pushy."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">Y</div>
-                        <div>
-                            <strong>Yelp Verified Review</strong>
-                            <span>Featured Review on Yelp</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"The personal styling service changed how I shop. They helped me build a capsule wardrobe that actually works together. No more closet full of nothing to wear. Worth every penny."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">S</div>
-                        <div>
-                            <strong>Sophia L.</strong>
-                            <span>Verified Customer Review</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"The skincare products here are amazing. They carry brands I cannot find anywhere else in Fullerton. My skin has improved so much since I switched to the routine they recommended."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">Y</div>
-                        <div>
-                            <strong>Yelp Verified Review</strong>
-                            <span>5-Star Review</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"I bought my wife a gift set from Manon for our anniversary and she was thrilled. The presentation was beautiful and the products were top quality. Now it is my go-to for gifts."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">R</div>
-                        <div>
-                            <strong>Robert D.</strong>
-                            <span>Verified Customer Review</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"This boutique is a hidden gem in Fullerton. The fragrance selection is incredible and the handbags are gorgeous. Every time I visit I find something I cannot leave without. Dangerous in the best way."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">A</div>
-                        <div>
-                            <strong>Angela M.</strong>
-                            <span>Verified Customer Review</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    <p class="review-text">"The seasonal collections are always fresh and exciting. I look forward to seeing what they bring in each season. The quality for the price is unbeatable. Manon is truly special."</p>
-                    <div class="review-author">
-                        <div class="review-avatar">K</div>
-                        <div>
-                            <strong>Karen W.</strong>
-                            <span>Verified Customer Review</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="reviews-cta">
-                <p>Discover your style at Manon. Visit us on Yorba Linda Blvd today.</p>
-                <a href="tel:7144419196" class="btn btn-primary">Call (714) 441-9196</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <span class="section-tag">About Manon</span>
-                    <h2>Where Every Woman<br>Finds Her Style</h2>
-                    <p>Manon was born from a passion for helping women look and feel their best. Located on Yorba Linda Boulevard in Fullerton, our boutique combines curated fashion, premium beauty products, and personal styling under one beautiful roof.</p>
-                    <p>We believe that great style should be accessible, not intimidating. Our team takes the time to understand your lifestyle, preferences, and goals before making recommendations. Whether you need a complete wardrobe refresh or the perfect lipstick shade, we are here to help.</p>
-                    <p>Our collections change with the seasons, so there is always something new to discover. But our commitment to quality, value, and personal service never changes. That is the Manon promise.</p>
-                    <div class="trust-badges">
-                        <span class="trust-badge">Curated Collections</span>
-                        <span class="trust-badge">Personal Styling</span>
-                        <span class="trust-badge">Unique Finds</span>
-                        <span class="trust-badge">Warm Atmosphere</span>
-                    </div>
-                </div>
-                <div class="about-details">
-                    <div class="detail-card">
-                        <h4>Handpicked Fashion</h4>
-                        <p>Every clothing piece is selected for quality fabric, flattering fit, and timeless style. We carry limited quantities so your look stays uniquely yours. New arrivals every week.</p>
-                    </div>
-                    <div class="detail-card">
-                        <h4>Premium Beauty Selection</h4>
-                        <p>Skincare, fragrances, and beauty products from trusted brands. We test everything before we carry it. Only the best makes it to our shelves.</p>
-                    </div>
-                    <div class="detail-card">
-                        <h4>Personal Styling Sessions</h4>
-                        <p>Book a one-on-one styling session and let our experts help you build a wardrobe you love. Personal attention, honest advice, and zero pressure. Just great style.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section" id="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Your Next Favorite Find<br>Is Waiting at Manon.</h2>
-                <p>Our collections change with the seasons and quantities are limited. The perfect piece for you could be on our rack right now. Visit Manon and discover something you will love.</p>
-                <div class="cta-buttons">
-                    <a href="tel:7144419196" class="btn btn-primary btn-lg btn-pulse">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                        Call: (714) 441-9196
+                <h1 class="hero-heading animate-on-scroll" data-animation="fade-up">
+                    L&rsquo;Art de<br>
+                    <span class="hero-italic">Vivre.</span>
+                </h1>
+                <p class="hero-sub animate-on-scroll" data-animation="fade-up">
+                    An experience, not just a service. Curated fashion, premium beauty, and personal styling for the woman who understands that true elegance is effortless.
+                </p>
+                <div class="hero-ctas animate-on-scroll" data-animation="fade-up">
+                    <a href="tel:7144419196" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        Call (714) 441-9196
                     </a>
-                    <a href="#contact" class="btn btn-secondary btn-lg btn-pulse">Visit Us Today</a>
+                    <a href="#concierge" class="btn btn-outline">Book a Styling Session</a>
                 </div>
-                <p class="cta-note">Mention this website for <strong>10% OFF</strong> your first purchase!</p>
+                <div class="hero-meta animate-on-scroll" data-animation="fade-up">
+                    <span class="hero-meta-item">3250 Yorba Linda Blvd, Fullerton</span>
+                    <span class="hero-meta-dot">&bull;</span>
+                    <span class="hero-meta-item">Mon–Sat 10AM–7PM &bull; Sun 11AM–5PM</span>
+                </div>
             </div>
-        </div>
-    </section>
+            <div class="hero-scroll-indicator animate-on-scroll" data-animation="fade-up">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
 
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <span class="section-tag">Get In Touch</span>
-                    <h2>Come See Us in Fullerton</h2>
-                    <p>Browse our collections, try on something new, or book a personal styling session. We love meeting new clients and helping them discover their style.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#be185d" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                            <div>
-                                <strong>Phone</strong>
-                                <a href="tel:7144419196">(714) 441-9196</a>
+        <!-- ===== SECTION 2: EXCLUSIVE OFFER STRIP ===== -->
+        <section class="offer-strip">
+            <div class="offer-inner">
+                <span class="offer-label">Exclusive</span>
+                <span class="offer-text"><strong>10% OFF</strong> your first purchase &mdash; mention this website when you visit</span>
+                <a href="tel:7144419196" class="offer-cta">Claim</a>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 3: THE MANON MANIFESTO ===== -->
+        <section class="manifesto" id="manifesto">
+            <div class="manifesto-accent-line"></div>
+            <div class="container">
+                <div class="manifesto-grid">
+                    <div class="manifesto-left animate-on-scroll" data-animation="fade-right">
+                        <span class="section-eyebrow">Our Philosophy</span>
+                        <h2 class="manifesto-heading">We Don&rsquo;t Follow<br>Trends. We Curate<br>
+                            <span class="text-gold">Timelessness.</span>
+                        </h2>
+                    </div>
+                    <div class="manifesto-right animate-on-scroll" data-animation="fade-left">
+                        <div class="manifesto-text-block">
+                            <p class="manifesto-dropcap">In a world drowning in fast fashion and fleeting trends, Manon stands as a sanctuary for the woman who knows her own mind. Every piece on our racks has been chosen with intention &mdash; not because it&rsquo;s trending, but because it&rsquo;s beautiful, well-made, and destined to become part of your personal story.</p>
+                            <p>We believe that style is not about following rules. It&rsquo;s about understanding yourself deeply enough to make choices that feel authentic. That&rsquo;s why we take the time to listen before we recommend. That&rsquo;s why we carry only what we genuinely love. And that&rsquo;s why a visit to Manon feels less like shopping and more like discovering.</p>
+                        </div>
+                        <div class="manifesto-signature">
+                            <span class="signature-line"></span>
+                            <span class="signature-text">The Manon Promise</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="manifesto-values animate-on-scroll" data-animation="fade-up">
+                    <div class="value-item">
+                        <span class="value-number">I</span>
+                        <h3>Intentional Curation</h3>
+                        <p>Every item is hand-selected. We carry only what we believe in &mdash; nothing more, nothing less.</p>
+                    </div>
+                    <div class="value-divider"></div>
+                    <div class="value-item">
+                        <span class="value-number">II</span>
+                        <h3>Personal Discovery</h3>
+                        <p>We listen first. Your lifestyle, your preferences, your aspirations &mdash; then we guide, never push.</p>
+                    </div>
+                    <div class="value-divider"></div>
+                    <div class="value-item">
+                        <span class="value-number">III</span>
+                        <h3>Lasting Quality</h3>
+                        <p>Quality isn&rsquo;t a luxury &mdash; it&rsquo;s a value. We choose pieces that endure beyond a single season.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 4: THE ATELIER (COLLECTIONS) ===== -->
+        <section class="atelier" id="atelier">
+            <div class="container">
+                <div class="atelier-header animate-on-scroll" data-animation="fade-up">
+                    <span class="section-eyebrow">The Atelier</span>
+                    <h2 class="section-heading">Eight Curated<br><span class="text-gold-italic">Collections</span></h2>
+                    <p class="section-sub">Each collection is a world of its own. Explore what speaks to you.</p>
+                </div>
+                <div class="atelier-grid">
+                    <div class="atelier-card atelier-card-large animate-on-scroll" data-animation="fade-up">
+                        <div class="atelier-card-bg" style="background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);">
+                            <span class="atelier-number">01</span>
+                            <div class="atelier-card-content">
+                                <svg class="atelier-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1"><path d="M20.38 3.46L16 2 12 3.46 8 2 3.62 3.46a2 2 0 00-1.34 1.88v14.4a1.27 1.27 0 001.52 1.22L8 20l4 1.46L16 20l4.38 1.46a1.27 1.27 0 001.52-1.22V5.34a2 2 0 00-1.52-1.88z"/></svg>
+                                <h3>Women&rsquo;s Fashion</h3>
+                                <p>Timeless elegance meets modern sensibility. Curated clothing selected for quality fabric, flattering silhouette, and effortless sophistication. Every piece tells a story of intentional design.</p>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#be185d" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <div>
-                                <strong>Address</strong>
-                                <span>3250 Yorba Linda Blvd<br>Fullerton, CA 92831</span>
+                    </div>
+                    <div class="atelier-card animate-on-scroll" data-animation="fade-up">
+                        <div class="atelier-card-bg">
+                            <span class="atelier-number">02</span>
+                            <div class="atelier-card-content">
+                                <svg class="atelier-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+                                <h3>Accessories &amp; Handbags</h3>
+                                <p>The finishing touches that elevate any look. Statement jewelry, designer-inspired bags, scarves, and belts.</p>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#be185d" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                            <div>
-                                <strong>Hours</strong>
-                                <span>Mon-Sat: 10:00 AM - 7:00 PM<br>Sun: 11:00 AM - 5:00 PM</span>
+                    </div>
+                    <div class="atelier-card animate-on-scroll" data-animation="fade-up">
+                        <div class="atelier-card-bg">
+                            <span class="atelier-number">03</span>
+                            <div class="atelier-card-content">
+                                <svg class="atelier-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                                <h3>Beauty Products</h3>
+                                <p>Premium beauty that helps you look and feel your best. Makeup, nail care, and tools from brands we trust.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atelier-card animate-on-scroll" data-animation="fade-up">
+                        <div class="atelier-card-bg">
+                            <span class="atelier-number">04</span>
+                            <div class="atelier-card-content">
+                                <svg class="atelier-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1"><path d="M9 18h6M10 22h4M12 2a7 7 0 017 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 01-1 1h-6a1 1 0 01-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 017-7z"/></svg>
+                                <h3>Skincare</h3>
+                                <p>Luxurious skincare for every skin type. Cleansers, serums, moisturizers from premium brands we stand behind.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atelier-card animate-on-scroll" data-animation="fade-up">
+                        <div class="atelier-card-bg">
+                            <span class="atelier-number">05</span>
+                            <div class="atelier-card-content">
+                                <svg class="atelier-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                                <h3>Fragrances</h3>
+                                <p>Signature scents that leave a lasting impression. Perfumes from renowned houses and artisan creators.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atelier-card atelier-card-large animate-on-scroll" data-animation="fade-up">
+                        <div class="atelier-card-bg" style="background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);">
+                            <span class="atelier-number">06</span>
+                            <div class="atelier-card-content">
+                                <svg class="atelier-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                                <h3>Personal Styling</h3>
+                                <p>Not sure what works for you? Our personal styling service takes the guesswork out of getting dressed. One-on-one consultations with honest advice and zero pressure. We help you build a wardrobe that reflects who you truly are.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atelier-card animate-on-scroll" data-animation="fade-up">
+                        <div class="atelier-card-bg">
+                            <span class="atelier-number">07</span>
+                            <div class="atelier-card-content">
+                                <svg class="atelier-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1"><path d="M20 12V8H6a2 2 0 01-2-2c0-1.1.9-2 2-2h12v4"/><path d="M4 6v12c0 1.1.9 2 2 2h14v-4"/><path d="M18 12a2 2 0 000 4h4v-4h-4z"/></svg>
+                                <h3>Gift Sets</h3>
+                                <p>Beautifully packaged for every occasion. Curated combinations of our best, wrapped and ready to give.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atelier-card animate-on-scroll" data-animation="fade-up">
+                        <div class="atelier-card-bg">
+                            <span class="atelier-number">08</span>
+                            <div class="atelier-card-content">
+                                <svg class="atelier-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 010 20"/><path d="M12 2a7 7 0 010 14"/></svg>
+                                <h3>Seasonal Collections</h3>
+                                <p>Fresh arrivals every season. Spring florals, summer glow, fall layers, winter elegance. Always something new.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
-                        <h3>Get In Touch</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" required placeholder="Jane Doe">
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone" placeholder="(714) 555-0000">
-                            </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 5: THE MANON EXPERIENCE JOURNEY ===== -->
+        <section class="experience" id="experience">
+            <div class="container">
+                <div class="experience-header animate-on-scroll" data-animation="fade-up">
+                    <span class="section-eyebrow light">The Manon Experience</span>
+                    <h2 class="section-heading light">Your Journey<br><span class="text-gold-italic">Begins Here</span></h2>
+                    <p class="section-sub light">From the moment you walk through our doors, every detail is designed to make you feel seen, heard, and celebrated.</p>
+                </div>
+                <div class="experience-journey">
+                    <div class="journey-step animate-on-scroll" data-animation="fade-up">
+                        <div class="journey-number">01</div>
+                        <div class="journey-connector"></div>
+                        <div class="journey-content">
+                            <h3>Welcome &amp; Discovery</h3>
+                            <p>You&rsquo;re greeted by name &mdash; or introduced with warmth. We take a moment to understand why you&rsquo;re here. A special occasion? A wardrobe refresh? Simply browsing? There&rsquo;s no wrong answer.</p>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="jane@email.com">
+                    </div>
+                    <div class="journey-step animate-on-scroll" data-animation="fade-up">
+                        <div class="journey-number">02</div>
+                        <div class="journey-connector"></div>
+                        <div class="journey-content">
+                            <h3>Personal Consultation</h3>
+                            <p>We listen to your style goals, lifestyle needs, and personal preferences. Whether you want a complete capsule wardrobe or the perfect dress for Saturday night, we tailor our recommendations to you.</p>
                         </div>
-                        <div class="form-group">
-                            <label for="interest">Interest</label>
-                            <select id="interest" name="interest">
-                                <option value="">Select your interest...</option>
-                                <option value="shopping">Shopping</option>
-                                <option value="styling">Personal Styling</option>
-                                <option value="gift">Gift Consultation</option>
-                                <option value="other">Other</option>
-                            </select>
+                    </div>
+                    <div class="journey-step animate-on-scroll" data-animation="fade-up">
+                        <div class="journey-number">03</div>
+                        <div class="journey-connector"></div>
+                        <div class="journey-content">
+                            <h3>Curated Selection</h3>
+                            <p>We pull pieces from across our collections that we believe will resonate with you. Think of it as your personal edit &mdash; only the pieces that match your essence, pre-selected by experts who care.</p>
                         </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="3" placeholder="Tell us how we can help you..."></textarea>
+                    </div>
+                    <div class="journey-step animate-on-scroll" data-animation="fade-up">
+                        <div class="journey-number">04</div>
+                        <div class="journey-content">
+                            <h3>The Try-On Experience</h3>
+                            <p>Our fitting space is private, comfortable, and unhurried. Try on at your own pace. We offer honest feedback &mdash; if something doesn&rsquo;t work, we&rsquo;ll tell you. If it does, we&rsquo;ll celebrate with you.</p>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                        <p class="form-note">We will respond within 1 hour during business hours.</p>
-                    </form>
+                    </div>
                 </div>
             </div>
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.2!2d-117.8863!3d33.8881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dcd5a5741234%3A0x9abc!2s3250+Yorba+Linda+Blvd+Fullerton+CA!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="350" style="border:0; border-radius: 16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="footer">
+        <!-- ===== SECTION 6: THE ART OF STYLE ===== -->
+        <section class="art-of-style" id="art-of-style">
+            <div class="container">
+                <div class="art-grid">
+                    <div class="art-content animate-on-scroll" data-animation="fade-right">
+                        <span class="section-eyebrow">The Art of Style</span>
+                        <h2 class="section-heading">Why Personal Styling<br>Is Not a Luxury&mdash;<br><span class="text-gold">It&rsquo;s a Necessity.</span></h2>
+                        <p>You know the feeling: a closet full of clothes and nothing to wear. That&rsquo;s not a you problem &mdash; it&rsquo;s a system problem. Without intentional curation, even the most beautiful pieces become noise.</p>
+                        <p>At Manon, personal styling isn&rsquo;t about telling you what to wear. It&rsquo;s about helping you discover what you&rsquo;ve always known but couldn&rsquo;t articulate. We act as a mirror &mdash; reflecting your essence back to you through fabric, color, and silhouette.</p>
+                        <p>Our stylists don&rsquo;t work on commission. They work on connection. Book a session and experience the difference that genuine care makes.</p>
+                        <a href="tel:7144419196" class="btn btn-primary" style="margin-top: 32px;">Book a Styling Session</a>
+                    </div>
+                    <div class="art-visual animate-on-scroll" data-animation="fade-left">
+                        <div class="art-cards">
+                            <div class="art-stat-card">
+                                <div class="art-stat-number" data-count="200">0</div>
+                                <div class="art-stat-label">Women Styled</div>
+                            </div>
+                            <div class="art-stat-card">
+                                <div class="art-stat-number">Personal</div>
+                                <div class="art-stat-label">One-on-One Sessions</div>
+                            </div>
+                            <div class="art-stat-card">
+                                <div class="art-stat-number">Weekly</div>
+                                <div class="art-stat-label">New Arrivals</div>
+                            </div>
+                            <div class="art-stat-card">
+                                <div class="art-stat-number">8</div>
+                                <div class="art-stat-label">Curated Collections</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 7: EDITORIAL TESTIMONIALS ===== -->
+        <section class="editorial" id="editorial">
+            <div class="editorial-bg-letter" aria-hidden="true">M</div>
+            <div class="container">
+                <div class="editorial-header animate-on-scroll" data-animation="fade-up">
+                    <span class="section-eyebrow">Voices</span>
+                    <h2 class="section-heading">In Their<br><span class="text-gold-italic">Own Words</span></h2>
+                </div>
+                <div class="editorial-grid">
+                    <div class="editorial-card editorial-featured animate-on-scroll" data-animation="fade-up">
+                        <span class="editorial-quote-mark">&ldquo;</span>
+                        <blockquote class="editorial-quote">Manon is my absolute favorite boutique. The clothing selection is incredible and the quality is outstanding. I always get compliments when I wear something from here.</blockquote>
+                        <div class="editorial-attribution">
+                            <span class="editorial-name">Yelp Verified Review</span>
+                            <span class="editorial-source">Featured Review</span>
+                        </div>
+                    </div>
+                    <div class="editorial-card animate-on-scroll" data-animation="fade-up">
+                        <span class="editorial-quote-mark">&ldquo;</span>
+                        <blockquote class="editorial-quote">The personal styling service changed how I shop. They helped me build a capsule wardrobe that actually works together. No more closet full of nothing to wear.</blockquote>
+                        <div class="editorial-attribution">
+                            <span class="editorial-name">Sophia L.</span>
+                            <span class="editorial-source">Verified Customer</span>
+                        </div>
+                    </div>
+                    <div class="editorial-card animate-on-scroll" data-animation="fade-up">
+                        <span class="editorial-quote-mark">&ldquo;</span>
+                        <blockquote class="editorial-quote">The skincare products here are amazing. They carry brands I cannot find anywhere else in Fullerton. My skin has improved so much since I switched to their recommended routine.</blockquote>
+                        <div class="editorial-attribution">
+                            <span class="editorial-name">Yelp Verified Review</span>
+                            <span class="editorial-source">5-Star Review</span>
+                        </div>
+                    </div>
+                    <div class="editorial-card animate-on-scroll" data-animation="fade-up">
+                        <span class="editorial-quote-mark">&ldquo;</span>
+                        <blockquote class="editorial-quote">I bought my wife a gift set from Manon for our anniversary and she was thrilled. The presentation was beautiful and the products were top quality. Now it is my go-to for gifts.</blockquote>
+                        <div class="editorial-attribution">
+                            <span class="editorial-name">Robert D.</span>
+                            <span class="editorial-source">Verified Customer</span>
+                        </div>
+                    </div>
+                    <div class="editorial-card animate-on-scroll" data-animation="fade-up">
+                        <span class="editorial-quote-mark">&ldquo;</span>
+                        <blockquote class="editorial-quote">This boutique is a hidden gem in Fullerton. The fragrance selection is incredible and the handbags are gorgeous. Every time I visit I find something I cannot leave without.</blockquote>
+                        <div class="editorial-attribution">
+                            <span class="editorial-name">Angela M.</span>
+                            <span class="editorial-source">Verified Customer</span>
+                        </div>
+                    </div>
+                    <div class="editorial-card editorial-featured animate-on-scroll" data-animation="fade-up">
+                        <span class="editorial-quote-mark">&ldquo;</span>
+                        <blockquote class="editorial-quote">The seasonal collections are always fresh and exciting. I look forward to seeing what they bring in each season. The quality for the price is unbeatable.</blockquote>
+                        <div class="editorial-attribution">
+                            <span class="editorial-name">Karen W.</span>
+                            <span class="editorial-source">Verified Customer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="editorial-cta animate-on-scroll" data-animation="fade-up">
+                    <p>Discover your style at Manon.</p>
+                    <a href="tel:7144419196" class="btn btn-outline">Call (714) 441-9196</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 8: LA MAISON (ABOUT) ===== -->
+        <section class="maison" id="maison">
+            <div class="container">
+                <div class="maison-grid">
+                    <div class="maison-content animate-on-scroll" data-animation="fade-right">
+                        <span class="section-eyebrow">La Maison</span>
+                        <h2 class="section-heading">Where Every Woman<br>Finds Her <span class="text-gold-italic">Style</span></h2>
+                        <p>Manon was born from a passion for helping women look and feel their best. Located on Yorba Linda Boulevard in Fullerton, our boutique combines curated fashion, premium beauty products, and personal styling under one beautiful roof.</p>
+                        <p>We believe that great style should be accessible, not intimidating. Our team takes the time to understand your lifestyle, preferences, and goals before making recommendations. This is not a store &mdash; it is a style destination.</p>
+                        <p>Our collections change with the seasons, so there is always something new to discover. But our commitment to quality, value, and personal service never changes.</p>
+                        <div class="maison-badges">
+                            <span class="maison-badge">Curated Collections</span>
+                            <span class="maison-badge">Personal Styling</span>
+                            <span class="maison-badge">Unique Finds</span>
+                            <span class="maison-badge">Warm Atmosphere</span>
+                        </div>
+                    </div>
+                    <div class="maison-sidebar animate-on-scroll" data-animation="fade-left">
+                        <div class="maison-detail-card">
+                            <div class="maison-detail-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.5"><path d="M20.38 3.46L16 2 12 3.46 8 2 3.62 3.46a2 2 0 00-1.34 1.88v14.4a1.27 1.27 0 001.52 1.22L8 20l4 1.46L16 20l4.38 1.46a1.27 1.27 0 001.52-1.22V5.34a2 2 0 00-1.52-1.88z"/></svg>
+                            </div>
+                            <h4>Handpicked Fashion</h4>
+                            <p>Every piece selected for quality fabric, flattering fit, and timeless style. Limited quantities so your look stays uniquely yours.</p>
+                        </div>
+                        <div class="maison-detail-card">
+                            <div class="maison-detail-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                            </div>
+                            <h4>Premium Beauty</h4>
+                            <p>Skincare, fragrances, and beauty from trusted brands. We test everything before we carry it. Only the best makes it to our shelves.</p>
+                        </div>
+                        <div class="maison-detail-card">
+                            <div class="maison-detail-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                            </div>
+                            <h4>Personal Styling Sessions</h4>
+                            <p>One-on-one styling sessions to help you build a wardrobe you love. Personal attention, honest advice, and zero pressure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 9: CONCIERGE BOOKING ===== -->
+        <section class="concierge" id="concierge">
+            <div class="container">
+                <div class="concierge-grid">
+                    <div class="concierge-info animate-on-scroll" data-animation="fade-right">
+                        <span class="section-eyebrow">Concierge</span>
+                        <h2 class="section-heading">Your Visit<br><span class="text-gold-italic">Awaits</span></h2>
+                        <p>Browse our collections, try on something new, or book a personal styling session. We love meeting new clients &mdash; and we think you&rsquo;ll love meeting us.</p>
+                        <div class="concierge-details">
+                            <div class="concierge-item">
+                                <div class="concierge-item-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                                </div>
+                                <div>
+                                    <strong>Phone</strong>
+                                    <a href="tel:7144419196">(714) 441-9196</a>
+                                </div>
+                            </div>
+                            <div class="concierge-item">
+                                <div class="concierge-item-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div>
+                                    <strong>Address</strong>
+                                    <span>3250 Yorba Linda Blvd<br>Fullerton, CA 92831</span>
+                                </div>
+                            </div>
+                            <div class="concierge-item">
+                                <div class="concierge-item-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a843" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                </div>
+                                <div>
+                                    <strong>Hours</strong>
+                                    <span>Mon–Sat: 10:00 AM – 7:00 PM<br>Sun: 11:00 AM – 5:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="concierge-form-wrapper animate-on-scroll" data-animation="fade-left">
+                        <form class="concierge-form" id="contactForm" novalidate>
+                            <h3>Get In Touch</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Doe">
+                                    <span class="form-error" id="nameError"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(714) 555-0000">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" autocomplete="email" placeholder="jane@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="interest">Interest</label>
+                                <select id="interest" name="interest">
+                                    <option value="">Select your interest...</option>
+                                    <option value="shopping">Shopping</option>
+                                    <option value="styling">Personal Styling</option>
+                                    <option value="gift">Gift Consultation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="3" placeholder="Tell us how we can help you..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                            <p class="form-note">We respond within 1 hour during business hours.</p>
+                        </form>
+                        <div class="form-success" id="formSuccess">
+                            <div class="form-success-icon">&#10003;</div>
+                            <h4>Message Received</h4>
+                            <p>Thank you for reaching out. We&rsquo;ll be in touch shortly.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-wrapper animate-on-scroll" data-animation="fade-up">
+                    <iframe src="https://maps.google.com/maps?q=3250+Yorba+Linda+Blvd+Fullerton+CA+92831&output=embed" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Manon Boutique Location"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECTION 10: CTA ===== -->
+        <section class="cta-section" id="cta">
+            <div class="container">
+                <div class="cta-content animate-on-scroll" data-animation="fade-up">
+                    <span class="section-eyebrow light">Your Next Chapter</span>
+                    <h2 class="cta-heading">Your Next Favorite Find<br><span class="text-gold-italic">Is Waiting.</span></h2>
+                    <p class="cta-text">Our collections change with the seasons and quantities are limited. The perfect piece for you could be on our rack right now.</p>
+                    <div class="cta-actions">
+                        <a href="tel:7144419196" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                            Call (714) 441-9196
+                        </a>
+                        <a href="#concierge" class="btn btn-outline-white btn-lg">Visit the Boutique</a>
+                    </div>
+                    <p class="cta-note">Mention this website for <strong>10% OFF</strong> your first purchase</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-icon">M</span>
-                        <div class="logo-text">
-                            <span class="logo-name">Manon</span>
-                            <span class="logo-tagline">Chic Fashion. Curated Beauty.</span>
-                        </div>
+                    <div class="footer-logo">
+                        <span class="footer-logo-letter">M</span>
+                        <span class="footer-logo-word">MANON</span>
                     </div>
-                    <p>Fullerton's chic fashion and beauty boutique. Curated collections, personal styling, and unique finds for the modern woman.</p>
+                    <p>Fullerton&rsquo;s curated fashion and beauty boutique. An experience, not just a service.</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h4>Explore</h4>
                     <ul>
-                        <li><a href="#collections">Our Collections</a></li>
-                        <li><a href="#why-us">Why Manon</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Visit Us</a></li>
+                        <li><a href="#manifesto">Our Philosophy</a></li>
+                        <li><a href="#atelier">The Atelier</a></li>
+                        <li><a href="#experience">The Experience</a></li>
+                        <li><a href="#editorial">Voices</a></li>
+                        <li><a href="#maison">La Maison</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
                     <h4>Collections</h4>
                     <ul>
-                        <li><a href="#collections">Fashion & Apparel</a></li>
-                        <li><a href="#collections">Accessories</a></li>
-                        <li><a href="#collections">Beauty Products</a></li>
-                        <li><a href="#collections">Skincare</a></li>
-                        <li><a href="#collections">Fragrances</a></li>
+                        <li><a href="#atelier">Women&rsquo;s Fashion</a></li>
+                        <li><a href="#atelier">Accessories</a></li>
+                        <li><a href="#atelier">Beauty Products</a></li>
+                        <li><a href="#atelier">Skincare</a></li>
+                        <li><a href="#atelier">Fragrances</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h4>Contact Us</h4>
+                    <h4>Contact</h4>
                     <p><a href="tel:7144419196">(714) 441-9196</a></p>
                     <p>3250 Yorba Linda Blvd<br>Fullerton, CA 92831</p>
-                    <p>Mon-Sat: 10AM - 7PM<br>Sun: 11AM - 5PM</p>
+                    <p>Mon–Sat: 10AM – 7PM<br>Sun: 11AM – 5PM</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -489,14 +670,18 @@
         </div>
     </footer>
 
+    <!-- Mobile CTA -->
     <div class="mobile-cta" id="mobileCta">
         <a href="tel:7144419196" class="btn btn-primary btn-full">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            Visit Us Today: (714) 441-9196
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            (714) 441-9196
         </a>
     </div>
 
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
