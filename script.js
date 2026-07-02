@@ -203,7 +203,7 @@
             'Message: ' + (data.message || 'N/A') + '\n\n' +
             'Please get back to me.'
         );
-        window.location.href = 'mailto:info@manonboutique.com?subject=' + subject + '&body=' + body;
+        window.location.href = 'mailto:[EMAIL ADDRESS]?subject=' + subject + '&body=' + body;
 
         // Show success
         formSuccess.classList.add('active');
